@@ -1,0 +1,2 @@
+document.querySelectorAll('[data-confirm]').forEach(el=>el.addEventListener('click',e=>{if(!confirm(el.dataset.confirm||'Yakin ingin melanjutkan?'))e.preventDefault()}));
+document.querySelectorAll('[data-search]').forEach(input=>input.addEventListener('input',()=>{const target=document.querySelector(input.dataset.search);if(!target)return;const q=input.value.toLowerCase();target.querySelectorAll('tbody tr').forEach(row=>row.style.display=row.innerText.toLowerCase().includes(q)?'':'none')}));
